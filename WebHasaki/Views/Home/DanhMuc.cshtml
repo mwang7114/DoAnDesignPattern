@@ -1,0 +1,227 @@
+﻿@{
+    ViewBag.Title = "DanhMuc";
+    Layout = "~/Views/Shared/_LayoutTrangChu.cshtml";
+}
+
+<link href="~/Content/CSS/User/csstimkiem.css" rel="stylesheet" />
+<link href="~/Content/CSS/User/cssdanhmuc.css" rel="stylesheet" />
+
+<div class="header">
+    <div class="nav-links">
+        <div class="menu-container" style="display: flex">
+            <div class="menu-icon" style="margin-right: 5px"><i class="fas fa-bars"></i></div>
+            <a>DANH MỤC</a>
+            <span class="long-pipe" style="font-size: 18px; margin-left: 5px">|</span>
+            <div class="dropdown">
+                <h3><a href="@Url.Action("DanhMuc", "Home")">Sức khỏe - Làm Đẹp</a></h3>
+                <a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Mỹ Phẩm High-End" })">Mỹ Phẩm High-End <i class="fas fa-chevron-right"></i></a>
+                <a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Chăm sóc da mặt" })">Chăm Sóc Da Mặt <i class="fas fa-chevron-right"></i></a>
+                <a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Trang Điểm" })">Trang Điểm <i class="fas fa-chevron-right"></i></a>
+                <a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Chăm Sóc Tóc" })">Chăm Sóc Tóc <i class="fas fa-chevron-right"></i></a>
+                <a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Chăm Sóc Cơ Thể" })">Chăm Sóc Cơ Thể <i class="fas fa-chevron-right"></i></a>
+                <a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Chăm Sóc Cá Nhân" })">Chăm Sóc Cá Nhân <i class="fas fa-chevron-right"></i></a>
+                <a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Nước Hoa" })">Nước Hoa <i class="fas fa-chevron-right"></i></a>
+                <a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Thực Phẩm Chức Năng" })">Thực Phẩm Chức Năng <i class="fas fa-chevron-right"></i></a>
+                <a href="#"><h3>Hasaki Clinic & Spa</h3></a>
+                <a href="#"><h3>Dịch Vụ Trải Nghiệm</h3></a>
+            </div>
+        </div>
+        <a class="menu" href="#">HASAKI DEALS</a>
+        <a class="menu" href="#">HOT DEALS</a>
+        <a class="menu" href="#">THƯƠNG HIỆU</a>
+        <a class="menu" href="/Home/HangMoiVe">HÀNG MỚI VỀ</a>
+        <a class="menu" href="#">BÁN CHẠY</a>
+        <a class="menu" href="#">CLINIC & SPA</a>
+    </div>
+    <div class="right-links">
+        <a href="#">Tra cứu đơn hàng</a>|
+        <a href="#">Tải ứng dụng</a>|
+        <a href="#"><i class="fas fa-map-marker-alt"></i> Chọn khu vực của bạn</a>
+    </div>
+</div>
+
+<div class="container-hangmoive">
+    <aside class="sidebar">
+        <section>
+            <h2>DANH MỤC</h2>
+            <ul>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Mỹ Phẩm High-End" })">Mỹ Phẩm High-End</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Chăm sóc da mặt" })">Chăm Sóc Da Mặt</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Trang Điểm" })">Trang Điểm</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Chăm Sóc Tóc" })">Chăm Sóc Tóc</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Chăm Sóc Cơ Thể" })">Chăm Sóc Cơ Thể</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Chăm Sóc Cá Nhân" })">Chăm Sóc Cá Nhân</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Nước Hoa" })">Nước Hoa</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = "Thực Phẩm Chức Năng" })">Thực Phẩm Chức Năng</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>KHOẢNG GIÁ</h2>
+            <ul>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, maxPrice = 100000 })">Dưới 100.000đ</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, minPrice = 100000, maxPrice = 200000 })">100.000đ - 200.000đ</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, minPrice = 200000, maxPrice = 300000 })">200.000đ - 300.000đ</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, minPrice = 300000, maxPrice = 500000 })">300.000đ - 500.000đ</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, minPrice = 500000 })">Trên 500.000đ</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>THƯƠNG HIỆU</h2>
+            <ul>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, brandName = "L'Oreal" })">L'Oreal</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, brandName = "Vaseline" })">Vaseline</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, brandName = "Dove" })">Dove</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, brandName = "Klairs's" })">Klairs's</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, brandName = "La Roche-Posay" })">La Roche-Posay</a></li>
+                <li><a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, brandName = "DHC" })">DHC</a></li>
+            </ul>
+        </section>
+    </aside>
+
+    <div class="container-suckhoelamdep">
+        <div class="header-suckhoelamdep">
+            <h1>@(ViewBag.nameCate ?? "Sức Khỏe - Làm Đẹp")</h1>
+            <span>(@(ViewBag.listSPCate?.Count ?? 0) sản phẩm)</span>
+        </div>
+        <div class="filters-suckhoelamdep">
+            <div>
+                <span>Sắp xếp</span>
+                <a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, sort = "moi-nhat" })" class="btn-sort @(ViewBag.Sort == "moi-nhat" ? "active" : "")">Mới nhất</a>
+                <a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, sort = "ban-chay" })" class="btn-sort @(ViewBag.Sort == "ban-chay" ? "active" : "")">Bán chạy</a>
+                <a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, sort = "gia-thap-cao" })" class="btn-sort @(ViewBag.Sort == "gia-thap-cao" ? "active" : "")">Giá thấp đến cao</a>
+                <a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, sort = "gia-cao-thap" })" class="btn-sort @(ViewBag.Sort == "gia-cao-thap" ? "active" : "")">Giá cao đến thấp</a>
+            </div>
+        </div>
+
+        <div class="sanpham-dm">
+            <div class="sp-row-dm">
+                @if (ViewBag.listSPCate != null && ViewBag.listSPCate.Count > 0)
+                {
+                    foreach (var item in ViewBag.listSPCate as List<WebHasaki.Models.Product>)
+                    {
+                        <a href="@Url.Action("ChiTietSP", "Home", new { id = item.ProductID })">
+                            <div class="product-card">
+                                <img src="@item.Image" height="220" width="220" />
+                                <div class="product-info">
+                                    <h3>@item.ProductName</h3>
+                                    <p>@item.Description</p>
+                                    <p class="price">
+                                        @item.Price.ToString("N0")đ
+                                        @if (item.PriceSale.HasValue)
+                                        {
+                                            <span class="old-price">@item.PriceSale.Value.ToString("N0")đ</span>
+                                        }
+                                        <span class="discount">@item.Discount%</span>
+                                    </p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                        <span class="reviews">(874)</span>
+                                    </div>
+                                    <p class="stock">Còn 9 ngày 10:44:41</p>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                }
+                else
+                {
+                    <p>Không tìm thấy sản phẩm nào trong danh mục này.</p>
+                }
+            </div>
+        </div>
+
+        <div class="pagination">
+            @if (ViewBag.TotalPages > 1)
+            {
+                if (ViewBag.CurrentPage > 1)
+                {
+                    <a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, brandName = ViewBag.BrandName, sort = ViewBag.Sort, page = ViewBag.CurrentPage - 1 })">« Trang trước</a>
+                }
+
+                int startPage = Math.Max(1, ViewBag.CurrentPage - 2);
+                int endPage = Math.Min(ViewBag.TotalPages, ViewBag.CurrentPage + 2);
+
+                if (startPage > 1)
+                {
+                    <a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, brandName = ViewBag.BrandName, sort = ViewBag.Sort, page = 1 })">1</a>
+                    if (startPage > 2)
+                    { <span>...</span> }
+                }
+
+                for (int i = startPage; i <= endPage; i++)
+                {
+                    <a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, brandName = ViewBag.BrandName, sort = ViewBag.Sort, page = i })" class="@(i == ViewBag.CurrentPage ? "active" : "")">@i</a>
+                }
+
+                if (endPage < ViewBag.TotalPages)
+                {
+                    if (endPage < ViewBag.TotalPages - 1)
+                    { <span>...</span> }
+                    <a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, brandName = ViewBag.BrandName, sort = ViewBag.Sort, page = ViewBag.TotalPages })">@ViewBag.TotalPages</a>
+                }
+
+                if (ViewBag.CurrentPage < ViewBag.TotalPages)
+                {
+                    <a href="@Url.Action("DanhMuc", "Home", new { nameCate = ViewBag.nameCate, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, brandName = ViewBag.BrandName, sort = ViewBag.Sort, page = ViewBag.CurrentPage + 1 })">Trang sau »</a>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn-sort {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #f8f8f8;
+        color: #333;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .btn-sort.active {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        .btn-sort:hover:not(.active) {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+    .pagination {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+        .pagination a {
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+            .pagination a.active {
+                background-color: #4CAF50;
+                color: white;
+                border: 1px solid #4CAF50;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: #ddd;
+            }
+
+        .pagination span {
+            padding: 8px 16px;
+            color: #666;
+        }
+</style>
