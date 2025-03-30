@@ -10,7 +10,7 @@ namespace WebHasaki.Models
 {
 public class DataModel
     {
-        public static string connectionString = "Server=MSI;Database=Hasaki;Trusted_Connection=True";
+        public static string connectionString = "Server=MSI;Database=Hasaki;Trusted_Connection=True"; //Thay Server = Tên của máy bạn
 
         public ArrayList get(string sql, SqlParameter[] parameters = null)
         {
